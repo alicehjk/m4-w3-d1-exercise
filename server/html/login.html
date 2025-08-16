@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login</title>
+</head>
+<body>
+  <main>
+    <h1>Login</h1>
+    <form method="post" action="/login">
+      <label>Username<br><input name="username" required></label><br>
+      <label>Password<br><input name="password" type="password" required></label><br>
+      <button type="submit">Sign in</button>
+    </form>
+    <p id="err" style="color:#b91c1c"></p>
+  </main>
+  <script>
+    const p = new URLSearchParams(location.search);
+    if (p.get('info')) document.getElementById('err').textContent = p.get('info');
+  </script>
+</body>
+</html>
